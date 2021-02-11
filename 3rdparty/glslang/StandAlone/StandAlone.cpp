@@ -833,7 +833,7 @@ void SetMessageOptions(EShMessages& messages)
     if (Options & EOptionSpv)
         messages = (EShMessages)(messages | EShMsgSpvRules);
     if (Options & EOptionVulkanRules)
-        messages = (EShMessages)(messages | EShMsgVulkanRules);
+        messages = (EShMessages)(messages ); // Dirtyly removed EShMsgVulkanRules
     if (Options & EOptionOutputPreprocessed)
         messages = (EShMessages)(messages | EShMsgOnlyPreprocessor);
     if (Options & EOptionReadHlsl)

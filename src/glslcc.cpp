@@ -1486,8 +1486,10 @@ static int compile_files(cmd_args& args, const TBuiltInResource& limits_conf)
         shader->setStringsWithLengthsAndNames(&shader_str, &shader_len, &files[i].filename, 1);
         shader->setInvertY(args.invert_y ? true : false);
         shader->setEnvInput(glslang::EShSourceGlsl, files[i].stage, glslang::EShClientVulkan, default_version);
-        shader->setEnvClient(glslang::EShClientVulkan, glslang::EShTargetVulkan_1_1);
+        shader->setEnvClient(glslang::EShClientOpenGL, glslang::EShTargetOpenGL_450);
         shader->setEnvTarget(glslang::EShTargetSpv, glslang::EShTargetSpv_1_0);
+        shader->setAutoMapBindings(true);
+        shader->setAutoMapLocations(true);
         add_defines(shader, args, def);
 
         if (args.preprocess) {

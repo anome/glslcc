@@ -1,3 +1,15 @@
+# For ISF
+
+Convert glsl to msl like this :
+
+*  ./build/src/glslcc --frag testisf.frag --output converted.msl --lang=msl --reflect
+
+* Make sure the file has a #version at the top 
+* make sure to add a float precision at the top 
+* varyings are forbidden
+
+
+
 ## glslcc: Cross-compiler for GLSL shader language (GLSL->HLSL,METAL,GLES,GLSLv3)
 [@septag](https://twitter.com/septagh)
 
